@@ -4,4 +4,4 @@ number = 3.14159
 
 # YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
 
-print(f"float: {number:2f}")
+print(f"Float: {number:.2f}")
