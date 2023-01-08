@@ -5,9 +5,9 @@ def print_matrix_integer(matrix=[[]]):
         lastidx = len(array) - 1
         for element in array:
             if lastidx > counter:
-                print(element, end=" ")
+                print("{:d} ".format(element))
             else:
-                print(element, end="\n")
+                print("{:d}".format(element), end="\n")
             counter += 1
         counter = 0
 
