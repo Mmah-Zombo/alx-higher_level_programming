@@ -1,4 +1,4 @@
-#!/usrbin/python3
+#!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     counter = 0
     for array in matrix:
