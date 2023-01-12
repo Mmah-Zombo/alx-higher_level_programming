@@ -2,7 +2,6 @@
 def weight_average(my_list=[]):
     if not my_list:
         return 0
-    weighted_sum = sum([score * weight for score, weight in my_list])
-    total_weight = sum([weight for _, weight in my_list])
-    return weighted_sum/total_weight
-
+    wght_sum = sum([score * wght for score, wght in my_list])
+    ttl_wght = sum([wght for _, wght in my_list])
+    return wght_sum/ttl_wght
