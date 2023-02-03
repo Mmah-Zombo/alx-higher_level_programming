@@ -1,7 +1,8 @@
-#!/usr/bin/pyhton3
-# 1-square.py
+#!/usr/bin/python3
+# 0-square.py
+"""Define a class Square."""
 
-"""A class called square that defines a square"""
+
 class Square:
-    """Repreents a square"""
+    """Represent a square."""
     pass
