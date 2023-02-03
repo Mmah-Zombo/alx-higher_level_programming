@@ -1,4 +1,5 @@
-#!/bin/bash/python3
+#!/usr/bin/python3
+# 6-square.py
 """This is the last timeI a saying this:
 This is the class called square. 
 this is true for every other project in this repo"""
