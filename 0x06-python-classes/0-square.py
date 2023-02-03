@@ -1,4 +1,4 @@
-#!/bin/bash/pyhton3
+#!/usr/bin/pyhton3
 # 1-square.py
 
 """A class called square that defines a square"""

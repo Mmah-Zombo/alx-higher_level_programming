@@ -1,4 +1,4 @@
-#!/bin/bash/python3
+#!/usr/bin/python3
 # 2-square.py
 
 """This is a class that defines a square 

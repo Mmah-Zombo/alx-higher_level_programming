@@ -1,5 +1,5 @@
-#!/bin/bash/python3
-
+#!/usr/bin/python3
+# 4-square.py
 """A square class based on the previous file"""
 class Square:
     """initialization of a square"""
