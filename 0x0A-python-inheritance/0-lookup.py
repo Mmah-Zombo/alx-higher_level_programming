@@ -1,4 +1,4 @@
-#!/usr/bash/python3
+#!/usr/bin/python3
 
 '''lookup returns the list of available attributes 
 and methods of an object '''
