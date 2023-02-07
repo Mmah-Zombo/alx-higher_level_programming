@@ -9,6 +9,7 @@ Args:
     a_class (class): the specified class 
 '''
 def is_same_class(obj, a_class):
+    '''Checks if its an instance'''
     if isinstance(obj, a_class):
         return True
     else:
