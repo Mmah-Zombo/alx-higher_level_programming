@@ -5,4 +5,4 @@ prints it to stdout
 def read_file(filename=""):
     """Prints the contents of a UTF8 text file"""
     with open(filename, "r", encoding="utf8") as f:
-        print(f.read())
+        print(f.read(), end="")
