@@ -9,21 +9,14 @@ if __name__ == "__main__":
     load_from_json_file = \
         __import__('6-load_from_json_file').load_from_json_file
     
-args_list = []
+    try:
+        args = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        args = []
 
-# Add each argument to the list
-for arg in sys.argv[1:]:
-    args_list.append(arg)
+    for arg in sys.argv:
+        if arg != sys.argv[0]:
+            args.append(arg)
 
-# Try to load the list from the file
-try:
-    args_list = load_from_json_file('add_item.json')
-except FileNotFoundError:
-    pass
+    save_to_json_file(args, "add_item.json")
 
-# Add each argument to the list
-for arg in sys.argv[1:]:
-    args_list.append(arg)
-
-# Save the list to the file
-save_to_json_file(args_list, 'add_item.json')
