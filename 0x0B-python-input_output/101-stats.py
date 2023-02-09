@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#!/usr/bin/env python
 import sys
 
 # Initialize the counters for each status code
