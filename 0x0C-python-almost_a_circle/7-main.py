@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 """ Doc """
 from models.rectangle import Rectangle
 
