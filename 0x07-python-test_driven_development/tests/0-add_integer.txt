@@ -1,0 +1,67 @@
+Test for 0-add_integer.py
+-------------------------------------------
+
+case 0: import
+>>> add_integer = __import__("0-add_integer").add_integer
+>>>
+-------------------------------------------
+
+case 1: passed in integers
+>>> add_integer(4, 6)
+10
+>>>
+-------------------------------------------
+
+case 2: string as the first input 
+>>> add_integer("4", 6)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>>
+-------------------------------------------
+
+case 3: string as the second input
+>>> add_integer(4, "6")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>>
+-------------------------------------------
+
+case 4: both inputs are strings
+>>> add_integer("4", "6")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>>
+-------------------------------------------
+
+case 5: extra arguments
+>>> add_integer(4, 6, 8)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+>>>
+-------------------------------------------
+
+case 6: too little arguments
+>>> add_integer(4)
+102
+>>> add_integer(6)
+104
+>>>
+-------------------------------------------
+
+case 7: no argument
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>>
+-------------------------------------------
+
+case 8: passing returned value to a variable
+>>> num = add_integer(6)
+>>> print(num)
+104
+>>>
