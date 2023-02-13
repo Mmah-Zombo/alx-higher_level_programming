@@ -3,6 +3,7 @@
 from models.base import Base
 
 class Rectangle(Base):
+    """Initialization of the class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.__width = width
@@ -12,10 +13,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Gets the width of the rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Sets the width of a rectanlge to a given value"""
         if (type(value) is not int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -28,6 +31,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """Sets the height of a rectanlge to a given value"""
         if (type(value) is not int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -59,8 +63,25 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Calculates and returns the area of the rectangle"""
         return (self.__height * self.__width)
 
     def display(self):
-        for a in range(self.__height + 1):
-            print("#" * self.__width)
+        """Print the rectangle with the # character."""
+        for y in range(self.y):
+            print("")
+        for row in range(self.__height):
+            [print(" ", end="")for x in range(self.x)]
+            [print("#", end="") for j in range(self.__width)]
+            print("")
+        
+        if self.__height == 0:
+            print("")
+
+    def __str__(self) -> str:
+        ID = self.id
+        h = self.__height
+        w = self.__width
+        X = self.__x
+        Y = self.__y
+        return f"[Rectangle] ({ID}) {X}/{Y} - {w}/{h}"
