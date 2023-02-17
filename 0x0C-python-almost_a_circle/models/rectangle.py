@@ -113,5 +113,3 @@ class Rectangle(Base):
                     self.x = value
                 elif key == "y":
                     self.y = value
-
-        return self.__dict__
