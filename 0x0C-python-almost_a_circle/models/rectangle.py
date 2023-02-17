@@ -84,17 +84,34 @@ class Rectangle(Base):
         w = self.__width
         X = self.__x
         Y = self.__y
-        return f"[Rectangle] ({ID}) {X}/{Y} - {w}/{h}"
+        return f"[Rectangle] ({ID}) {X}/{Y} - \
+{w}/{h}"
 
 
-    def update(self, *args):
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 5:
-            self.y = args[4]
+    def update(self, *args, **kwargs):
+        if args and len(args) != 0:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
+        return self.__dict__
