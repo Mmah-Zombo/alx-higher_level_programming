@@ -1,7 +1,7 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 >>> text_indentation("Hello. This is a test. How are you?")
-Hello
-This is a test
+Hello.
+This is a test.
 How are you?
 
 # Test for text not being a string
