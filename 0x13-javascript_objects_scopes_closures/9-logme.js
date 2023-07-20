@@ -1,8 +1,7 @@
 #!/usr/bin/node
-
-let trackLogs = 0;
+let narg = 0;
 
 exports.logMe = function (item) {
-  console.log(`${trackLogs}: ${item}`);
-  trackLogs++;
+  console.log(narg + ': ' + item);
+  narg++;
 };
