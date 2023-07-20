@@ -4,7 +4,7 @@
 My name is John Doe
 
 >>> say_my_name("Jane")
-My name is Jane
+My name is Jane 
 
 # Test for last_name not being a string
 >>> say_my_name("Alice", 123)
