@@ -7,17 +7,19 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    chars_to_newline = ['.', '?', ':']
-    result = []
-    line = ""
+    # Skip initial whitespace
+    char_index = 0
+    while char_index < len(text) and text[char_index] == ' ':
+        char_index += 1
 
-    for char in text:
-        line += char
-        if char in chars_to_newline:
-            result.append(line.strip())
-            line = ""
+    for char_index in range(char_index, len(text)):
+        print(text[char_index], end="")
 
-    if line:
-        result.append(line.strip())
+        if text[char_index] in "\n.?:":
+            if text[char_index] in ".?:":
+                print("\n")
 
-    print("\n".join(result))
+            # Skip following whitespace
+            char_index += 1
+            while char_index < len(text) and text[char_index] == ' ':
+                char_index += 1
