@@ -7,15 +7,22 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    punctuation_marks = {'.', '?', ':'}
-    current_line = ""
+    punctuation_chars = {'.', '?', ':'}
+    new_line_chars = {'\n', '\r'}
+
+    in_punctuation = False
 
     for char in text:
-        current_line += char
-        if char in punctuation_marks:
-            print(current_line.strip())
-            print()
-            current_line = ""
+        if char in punctuation_chars:
+            print(char, end='')
+            in_punctuation = True
+        elif char in new_line_chars:
+            continue
+        else:
+            if in_punctuation:
+                print('\n')
+                in_punctuation = False
+            print(char, end='')
 
-    if current_line:
-        print(current_line.strip())
+    # Make sure there are two new lines after the last sentence.
+    print('\n\n')
