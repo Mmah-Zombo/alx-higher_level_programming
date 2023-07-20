@@ -10,7 +10,7 @@ Args:
 
 Returns:
     int: The sum of 'a' and 'b' as an integer.
-
+"""
 Examples:
 >>> add_integer(2, 3)
 5
@@ -32,4 +32,3 @@ Examples:
 
 >>> add_integer(2)
 100
-"""
