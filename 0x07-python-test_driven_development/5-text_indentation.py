@@ -14,15 +14,18 @@ def text_indentation(text):
 
     for char in text:
         if char in punctuation_chars:
-            print(char, end='')
-            in_punctuation = True
+            if in_punctuation:
+                print(char, end='')
+            else:
+                print('\n' + char, end='')
+                in_punctuation = True
         elif char in new_line_chars:
             continue
         else:
             if in_punctuation:
-                print('\n')
+                print()
                 in_punctuation = False
             print(char, end='')
 
     # Make sure there are two new lines after the last sentence.
-    print('\n\n')
+    print()
