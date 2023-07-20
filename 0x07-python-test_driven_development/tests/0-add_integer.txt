@@ -1,67 +1,71 @@
-Test for 0-add_integer.py
--------------------------------------------
+"""
+Add two integers.
 
-case 0: import
->>> add_integer = __import__("0-add_integer").add_integer
->>>
--------------------------------------------
+This function takes two arguments, 'a' and 'b', and returns their sum as an integer.
+If either 'a' or 'b' is not an integer or a float, a TypeError exception will be raised.
 
-case 1: passed in integers
->>> add_integer(4, 6)
-10
->>>
--------------------------------------------
+Args:
+    a (int or float): The first number to be added.
+    b (int or float, optional): The second number to be added. Defaults to 98.
 
-case 2: string as the first input 
->>> add_integer("4", 6)
+Returns:
+    int: The sum of 'a' and 'b' as an integer.
+
+Examples:
+>>> add_integer(2, 3)
+5
+
+>>> add_integer(2, -3)
+-1
+
+>>> add_integer(2.0, 3.0)
+5
+
+>>> add_integer(2.9, 0.2)
+2
+
+>>> add_integer(-2.9, -0.2)
+-2
+
+>>> add_integer(2.3, -3)
+-1
+
+>>> add_integer(2)
+100
+
+>>> add_integer("hello", 3)
 Traceback (most recent call last):
-...
 TypeError: a must be an integer
->>>
--------------------------------------------
 
-case 3: string as the second input
->>> add_integer(4, "6")
+>>> add_integer(2, "hello")
 Traceback (most recent call last):
-...
 TypeError: b must be an integer
->>>
--------------------------------------------
 
-case 4: both inputs are strings
->>> add_integer("4", "6")
+>>> add_integer(None)
 Traceback (most recent call last):
-...
 TypeError: a must be an integer
->>>
--------------------------------------------
 
-case 5: extra arguments
->>> add_integer(4, 6, 8)
+>>> add_integer(2.3, None)
 Traceback (most recent call last):
-...
-TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
->>>
--------------------------------------------
+TypeError: b must be an integer
 
-case 6: too little arguments
->>> add_integer(4)
-102
->>> add_integer(6)
-104
->>>
--------------------------------------------
-
-case 7: no argument
->>> add_integer()
+>>> add_integer("hello", "there")
 Traceback (most recent call last):
-...
-TypeError: add_integer() missing 1 required positional argument: 'a'
->>>
--------------------------------------------
+TypeError: a must be an integer
 
-case 8: passing returned value to a variable
->>> num = add_integer(6)
->>> print(num)
-104
->>>
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(2, float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+"""
