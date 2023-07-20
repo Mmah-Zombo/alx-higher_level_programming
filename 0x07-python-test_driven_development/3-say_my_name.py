@@ -13,4 +13,4 @@ def say_my_name(first_name, last_name=""):
 
     # Print the name
     full_name = first_name + " " + last_name
-    print("My name is", full_name.strip())
+    print("My name is {}".format(full_name))
