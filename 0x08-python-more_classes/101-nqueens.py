@@ -6,46 +6,35 @@ import sys
 def is_safe(board, row, col, N):
     """Check if there is a queen in the same column"""
     for i in range(row):
-        if board[i][col] == 1:
+        if board[i] == col or \
+           board[i] + i == col + row or \
+           board[i] - i == col - row:
             return False
-
-    # Check if there is a queen in the upper-left diagonal
-    for i, j in zip(range(row-1, -1, -1), range(col-1, -1, -1)):
-        if board[i][j] == 1:
-            return False
-
-    # Check if there is a queen in the upper-right diagonal
-    for i, j in zip(range(row-1, -1, -1), range(col+1, N)):
-        if board[i][j] == 1:
-            return False
-
     return True
 
 
-def print_solution(board, N):
-    """prints the solution"""
-    solution = []
-    for row in range(N):
-        queen_pos = [i for i, val in enumerate(board[row]) if val == 1]
-        solution.append(queen_pos[0])
-    print(solution)
-
-
 def solve_nqueens(board, row, N):
-    """solve the nqueens"""
+    """solves it"""
     if row == N:
         print_solution(board, N)
         return
 
     for col in range(N):
         if is_safe(board, row, col, N):
-            board[row][col] = 1
+            board[row] = col
             solve_nqueens(board, row + 1, N)
-            board[row][col] = 0
+
+
+def print_solution(board, N):
+    """print sol"""
+    solution = []
+    for col in board:
+        solution.append([i, col] for i, col in enumerate(board))
+    print(solution)
 
 
 def nqueens(N):
-    """nqueens"""
+    """nqns"""
     try:
         N = int(N)
     except ValueError:
@@ -56,7 +45,7 @@ def nqueens(N):
         print("N must be at least 4")
         sys.exit(1)
 
-    board = [[0 for _ in range(N)] for _ in range(N)]
+    board = [0] * N
     solve_nqueens(board, 0, N)
 
 
