@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """A module with an add_integer function"""
 
-
 def add_integer(a, b=98):
     """A function that adds 2 integer"""
     if not isinstance(a, int) and not isinstance(a, float):
